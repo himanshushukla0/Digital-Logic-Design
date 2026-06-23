@@ -48,6 +48,11 @@ A decoder takes an **n-bit** binary input code and activates exactly one of its 
 | 1 | 1 | I2 |
 
 #### Schematic Captures
+<img width="1433" height="687" alt="Screenshot 2026-06-23 112046" src="https://github.com/user-attachments/assets/f461b22a-d218-4a80-b852-dd83f125b1ba" />
+<img width="1433" height="707" alt="Screenshot 2026-06-23 112148" src="https://github.com/user-attachments/assets/f6c4a4b6-369f-4987-9ef8-901b6386a641" />
+
+
+
 <br>
 
 ### 02. 4-to-1 Multiplexer (4:1 MUX)
@@ -63,6 +68,9 @@ A decoder takes an **n-bit** binary input code and activates exactly one of its 
 | 1 | 1 | 1 | I4 |
 
 #### Schematic Captures
+<img width="1441" height="702" alt="Screenshot 2026-06-23 111659" src="https://github.com/user-attachments/assets/829328cf-bcbe-4706-82fd-03a19bf8bbf6" />
+<img width="1443" height="690" alt="Screenshot 2026-06-23 111837" src="https://github.com/user-attachments/assets/fa3ce46d-1daf-4fff-837c-6eca248b1163" />
+
 <br>
 
 ### 03. 8-to-1 Multiplexer (8:1 MUX)
@@ -81,3 +89,6 @@ A decoder takes an **n-bit** binary input code and activates exactly one of its 
 | 1 | 1 | 1 | 1 | I8 |
 
 #### Schematic Captures
+<img width="1436" height="716" alt="Screenshot 2026-06-23 112239" src="https://github.com/user-attachments/assets/e4871dba-f61e-4f99-8f10-cb163b07eede" />
+<img width="1432" height="680" alt="Screenshot 2026-06-23 112317" src="https://github.com/user-attachments/assets/01bc03fd-36cc-4d76-895e-ac9749af0b24" />
+
