@@ -1,0 +1,45 @@
+# Ignore Simulation Databases
+*.wdb
+
+# Ignore Compiled Executables
+*_isim_beh
+*_beh.exe
+
+# Ignore ISE Log and Nav Files
+*.schlog
+*.jhd
+*.cmd_log
+*.lso
+
+# Xilinx ISE Generated Build and Log Files
+*.bgn
+*.bit
+*.bld
+*.cmd_log
+*.drc
+*.lso
+*.map
+*.mrp
+*.ncd
+*.ngc
+*.ngd
+*.ngm
+*.ngr
+*.pad
+*.par
+*.pcf
+*.ptwx
+*.syr
+*.twr
+*.twx
+*.unroutes
+*.ut
+*.xpi
+*.xrpt
+*.xst
+*_summary.html
+*_usage.html
+*_envsettings.html
+*.xreport
+*.o
+*_isim_beh.*

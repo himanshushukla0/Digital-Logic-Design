@@ -1,0 +1,73 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : full_subtractor.vf
+// /___/   /\     Timestamp : 06/15/2026 06:38:01
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/full_subtractor.vf -w /home/ise/ise_projects/schematic/full_subtractor.sch
+//Design Name: full_subtractor
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module half_subtractor_MUSER_full_subtractor(A, 
+                                             B, 
+                                             Borrow, 
+                                             D);
+
+    input A;
+    input B;
+   output Borrow;
+   output D;
+   
+   wire XLXN_1;
+   
+   INV  XLXI_1 (.I(A), 
+               .O(XLXN_1));
+   XOR2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(D));
+   AND2  XLXI_4 (.I0(B), 
+                .I1(XLXN_1), 
+                .O(Borrow));
+endmodule
+`timescale 1ns / 1ps
+
+module full_subtractor(A, 
+                       B, 
+                       Bin, 
+                       Bout, 
+                       D);
+
+    input A;
+    input B;
+    input Bin;
+   output Bout;
+   output D;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   half_subtractor_MUSER_full_subtractor  XLXI_2 (.A(A), 
+                                                 .B(B), 
+                                                 .Borrow(XLXN_2), 
+                                                 .D(XLXN_1));
+   half_subtractor_MUSER_full_subtractor  XLXI_3 (.A(XLXN_1), 
+                                                 .B(Bin), 
+                                                 .Borrow(XLXN_3), 
+                                                 .D(D));
+   OR2  XLXI_4 (.I0(XLXN_2), 
+               .I1(XLXN_3), 
+               .O(Bout));
+endmodule
