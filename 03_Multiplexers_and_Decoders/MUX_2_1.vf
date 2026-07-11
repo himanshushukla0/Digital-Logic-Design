@@ -1,0 +1,52 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : MUX_2_1.vf
+// /___/   /\     Timestamp : 06/22/2026 22:19:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/MUX_2_1.vf -w /home/ise/ise_projects/schematic/MUX_2_1.sch
+//Design Name: MUX_2_1
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module MUX_2_1(E, 
+               I1, 
+               I2, 
+               S, 
+               Y);
+
+    input E;
+    input I1;
+    input I2;
+    input S;
+   output Y;
+   
+   wire XLXN_5;
+   wire XLXN_7;
+   wire XLXN_11;
+   
+   INV  XLXI_1 (.I(S), 
+               .O(XLXN_7));
+   OR2  XLXI_5 (.I0(XLXN_5), 
+               .I1(XLXN_11), 
+               .O(Y));
+   AND3  XLXI_6 (.I0(E), 
+                .I1(I1), 
+                .I2(XLXN_7), 
+                .O(XLXN_11));
+   AND3  XLXI_7 (.I0(E), 
+                .I1(I2), 
+                .I2(S), 
+                .O(XLXN_5));
+endmodule

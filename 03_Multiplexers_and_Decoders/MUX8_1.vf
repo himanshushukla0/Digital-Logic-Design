@@ -1,0 +1,125 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : MUX8_1.vf
+// /___/   /\     Timestamp : 06/22/2026 22:19:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/MUX8_1.vf -w /home/ise/ise_projects/schematic/MUX8_1.sch
+//Design Name: MUX8_1
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module MUX_2_1_MUSER_MUX8_1(E, 
+                            I1, 
+                            I2, 
+                            S, 
+                            Y);
+
+    input E;
+    input I1;
+    input I2;
+    input S;
+   output Y;
+   
+   wire XLXN_5;
+   wire XLXN_7;
+   wire XLXN_11;
+   
+   INV  XLXI_1 (.I(S), 
+               .O(XLXN_7));
+   OR2  XLXI_5 (.I0(XLXN_5), 
+               .I1(XLXN_11), 
+               .O(Y));
+   AND3  XLXI_6 (.I0(E), 
+                .I1(I1), 
+                .I2(XLXN_7), 
+                .O(XLXN_11));
+   AND3  XLXI_7 (.I0(E), 
+                .I1(I2), 
+                .I2(S), 
+                .O(XLXN_5));
+endmodule
+`timescale 1ns / 1ps
+
+module MUX8_1(E, 
+              I0, 
+              I1, 
+              I2, 
+              I3, 
+              I4, 
+              I5, 
+              I6, 
+              I7, 
+              S1, 
+              S2, 
+              S3, 
+              Y);
+
+    input E;
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+    input I7;
+    input S1;
+    input S2;
+    input S3;
+   output Y;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_6;
+   
+   MUX_2_1_MUSER_MUX8_1  XLXI_1 (.E(E), 
+                                .I1(I4), 
+                                .I2(I5), 
+                                .S(S1), 
+                                .Y(XLXN_3));
+   MUX_2_1_MUSER_MUX8_1  XLXI_2 (.E(E), 
+                                .I1(I6), 
+                                .I2(I7), 
+                                .S(S1), 
+                                .Y(XLXN_4));
+   MUX_2_1_MUSER_MUX8_1  XLXI_3 (.E(E), 
+                                .I1(I2), 
+                                .I2(I3), 
+                                .S(S1), 
+                                .Y(XLXN_2));
+   MUX_2_1_MUSER_MUX8_1  XLXI_4 (.E(E), 
+                                .I1(XLXN_1), 
+                                .I2(XLXN_2), 
+                                .S(S2), 
+                                .Y(XLXN_5));
+   MUX_2_1_MUSER_MUX8_1  XLXI_5 (.E(E), 
+                                .I1(XLXN_3), 
+                                .I2(XLXN_4), 
+                                .S(S2), 
+                                .Y(XLXN_6));
+   MUX_2_1_MUSER_MUX8_1  XLXI_7 (.E(E), 
+                                .I1(XLXN_5), 
+                                .I2(XLXN_6), 
+                                .S(S3), 
+                                .Y(Y));
+   MUX_2_1_MUSER_MUX8_1  XLXI_8 (.E(E), 
+                                .I1(I0), 
+                                .I2(I1), 
+                                .S(S1), 
+                                .Y(XLXN_1));
+endmodule
