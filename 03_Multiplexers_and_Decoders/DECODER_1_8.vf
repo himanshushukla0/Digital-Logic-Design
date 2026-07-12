@@ -1,0 +1,152 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : DECODER_1_8.vf
+// /___/   /\     Timestamp : 06/18/2026 10:52:17
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/DECODER_1_8.vf -w /home/ise/ise_projects/schematic/DECODER_1_8.sch
+//Design Name: DECODER_1_8
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module DEMUX_1_8_WITH_AND_MUSER_DECODER_1_8(E, 
+                                            I, 
+                                            S0, 
+                                            S1, 
+                                            S2, 
+                                            Y0, 
+                                            Y1, 
+                                            Y2, 
+                                            Y3, 
+                                            Y4, 
+                                            Y5, 
+                                            Y6, 
+                                            Y7);
+
+    input E;
+    input I;
+    input S0;
+    input S1;
+    input S2;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   output Y4;
+   output Y5;
+   output Y6;
+   output Y7;
+   
+   wire XLXN_22;
+   wire XLXN_23;
+   wire XLXN_42;
+   
+   AND5  XLXI_1 (.I0(I), 
+                .I1(XLXN_23), 
+                .I2(XLXN_22), 
+                .I3(XLXN_42), 
+                .I4(E), 
+                .O(Y0));
+   AND5  XLXI_2 (.I0(I), 
+                .I1(XLXN_23), 
+                .I2(XLXN_22), 
+                .I3(S0), 
+                .I4(E), 
+                .O(Y1));
+   AND5  XLXI_3 (.I0(I), 
+                .I1(XLXN_23), 
+                .I2(S1), 
+                .I3(XLXN_42), 
+                .I4(E), 
+                .O(Y2));
+   AND5  XLXI_4 (.I0(I), 
+                .I1(XLXN_23), 
+                .I2(S1), 
+                .I3(S0), 
+                .I4(E), 
+                .O(Y3));
+   AND5  XLXI_5 (.I0(I), 
+                .I1(S2), 
+                .I2(XLXN_22), 
+                .I3(XLXN_42), 
+                .I4(E), 
+                .O(Y4));
+   AND5  XLXI_6 (.I0(I), 
+                .I1(S2), 
+                .I2(XLXN_22), 
+                .I3(S0), 
+                .I4(E), 
+                .O(Y5));
+   AND5  XLXI_7 (.I0(I), 
+                .I1(S2), 
+                .I2(S1), 
+                .I3(XLXN_42), 
+                .I4(E), 
+                .O(Y6));
+   AND5  XLXI_8 (.I0(I), 
+                .I1(S2), 
+                .I2(S1), 
+                .I3(S0), 
+                .I4(E), 
+                .O(Y7));
+   INV  XLXI_25 (.I(S0), 
+                .O(XLXN_42));
+   INV  XLXI_26 (.I(S1), 
+                .O(XLXN_22));
+   INV  XLXI_27 (.I(S2), 
+                .O(XLXN_23));
+endmodule
+`timescale 1ns / 1ps
+
+module DECODER_1_8(I0, 
+                   I1, 
+                   I2, 
+                   Y0, 
+                   Y1, 
+                   Y2, 
+                   Y3, 
+                   Y4, 
+                   Y5, 
+                   Y6, 
+                   Y7);
+
+    input I0;
+    input I1;
+    input I2;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   output Y4;
+   output Y5;
+   output Y6;
+   output Y7;
+   
+   wire XLXN_1;
+   
+   DEMUX_1_8_WITH_AND_MUSER_DECODER_1_8  XLXI_1 (.E(XLXN_1), 
+                                                .I(XLXN_1), 
+                                                .S0(I0), 
+                                                .S1(I1), 
+                                                .S2(I2), 
+                                                .Y0(Y0), 
+                                                .Y1(Y1), 
+                                                .Y2(Y2), 
+                                                .Y3(Y3), 
+                                                .Y4(Y4), 
+                                                .Y5(Y5), 
+                                                .Y6(Y6), 
+                                                .Y7(Y7));
+   VCC  XLXI_2 (.P(XLXN_1));
+endmodule

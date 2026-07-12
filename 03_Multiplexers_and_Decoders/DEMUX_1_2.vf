@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : DEMUX_1_2.vf
+// /___/   /\     Timestamp : 06/16/2026 06:17:00
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/DEMUX_1_2.vf -w /home/ise/ise_projects/schematic/DEMUX_1_2.sch
+//Design Name: DEMUX_1_2
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module DEMUX_1_2(E, 
+                 I, 
+                 S0, 
+                 Y0, 
+                 Y1);
+
+    input E;
+    input I;
+    input S0;
+   output Y0;
+   output Y1;
+   
+   wire XLXN_1;
+   
+   INV  XLXI_1 (.I(S0), 
+               .O(XLXN_1));
+   AND3  XLXI_2 (.I0(E), 
+                .I1(I), 
+                .I2(XLXN_1), 
+                .O(Y0));
+   AND3  XLXI_3 (.I0(E), 
+                .I1(I), 
+                .I2(S0), 
+                .O(Y1));
+endmodule

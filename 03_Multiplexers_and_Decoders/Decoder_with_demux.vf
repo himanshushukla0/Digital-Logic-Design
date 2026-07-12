@@ -1,0 +1,96 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Decoder_with_demux.vf
+// /___/   /\     Timestamp : 06/25/2026 16:40:03
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog /home/ise/ise_projects/schematic/Decoder_with_demux.vf -w /home/ise/ise_projects/schematic/Decoder_with_demux.sch
+//Design Name: Decoder_with_demux
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module DEMUX_1_4_MUSER_Decoder_with_demux(E, 
+                                          I, 
+                                          S0, 
+                                          S1, 
+                                          Y0, 
+                                          Y1, 
+                                          Y2, 
+                                          Y3);
+
+    input E;
+    input I;
+    input S0;
+    input S1;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   
+   wire XLXN_7;
+   wire XLXN_9;
+   
+   INV  XLXI_1 (.I(S1), 
+               .O(XLXN_9));
+   INV  XLXI_2 (.I(S0), 
+               .O(XLXN_7));
+   AND4  XLXI_3 (.I0(I), 
+                .I1(XLXN_9), 
+                .I2(XLXN_7), 
+                .I3(E), 
+                .O(Y0));
+   AND4  XLXI_4 (.I0(I), 
+                .I1(XLXN_9), 
+                .I2(S0), 
+                .I3(E), 
+                .O(Y1));
+   AND4  XLXI_5 (.I0(I), 
+                .I1(S1), 
+                .I2(XLXN_7), 
+                .I3(E), 
+                .O(Y2));
+   AND4  XLXI_6 (.I0(I), 
+                .I1(S1), 
+                .I2(S0), 
+                .I3(E), 
+                .O(Y3));
+endmodule
+`timescale 1ns / 1ps
+
+module Decoder_with_demux(I0, 
+                          I1, 
+                          Y0, 
+                          Y1, 
+                          Y2, 
+                          Y3);
+
+    input I0;
+    input I1;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   
+   wire XLXN_15;
+   
+   DEMUX_1_4_MUSER_Decoder_with_demux  XLXI_5 (.E(XLXN_15), 
+                                              .I(XLXN_15), 
+                                              .S0(I0), 
+                                              .S1(I1), 
+                                              .Y0(Y0), 
+                                              .Y1(Y1), 
+                                              .Y2(Y2), 
+                                              .Y3(Y3));
+   VCC  XLXI_6 (.P(XLXN_15));
+endmodule
